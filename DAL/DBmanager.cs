@@ -19,7 +19,7 @@ namespace DAL
                 using (SqlConnection mySqlConnection = new SqlConnection(myDataConnctionString))
                 {
                     mySqlConnection.Open();
-                    SqlCommand query = new SqlCommand($"INSERT INTO [dbo].[Searches] ([SearchTerm],[SearchDate]) VALUES ('{filesearch.SearchedTerm}',getdate()) ", mySqlConnection);
+                    SqlCommand query = new SqlCommand($"INSERT INTO [dbo].[Searches] ([SearchTerm],[SearchDate],[SearchPath]) VALUES ('{filesearch.SearchedTerm}',getdate(), '{filesearch.SearchPath}') ", mySqlConnection);
                     rowsAffected = query.ExecuteNonQuery();
                     query = new SqlCommand("select @@IDENTITY as ID", mySqlConnection);//get the last searchID from DB
                     searchID = int.Parse(query.ExecuteScalar().ToString());
@@ -50,12 +50,12 @@ namespace DAL
             using (SqlConnection mySqlConnection = new SqlConnection(myDataConnctionString))
             {
                 mySqlConnection.Open();
-                SqlCommand query = new SqlCommand("SELECT s.SearchID, s.SearchTerm, s.SearchDate, sr.SearchResultPath FROM DBO.Searches AS s LEFT JOIN DBO.Search_Results AS sr ON s.SearchID = sr.SearchID", mySqlConnection);
+                SqlCommand query = new SqlCommand("SELECT s.SearchID, s.SearchTerm, s.SearchDate, sr.SearchResultPath, s.SearchPath FROM DBO.Searches AS s LEFT JOIN DBO.Search_Results AS sr ON s.SearchID = sr.SearchID", mySqlConnection);
                 reader = query.ExecuteReader();
 
                 while (reader.Read()) //generate the joined data sting from the query
                 {
-                    dbData.Add($"ID: {reader[0]} Search Term: {reader[1]} Search Date: {DateTime.Parse(reader[2].ToString()).ToString("dd/MM/yyyy HH:mm:ss") } Result Path: {reader[3]}");
+                    dbData.Add($"ID:{reader[0]} Search Term: {reader[1]} Initial Search Path: {reader[4]} Search Date: {DateTime.Parse(reader[2].ToString()).ToString("dd/MM/yyyy HH:mm:ss") } Result Path: {reader[3]}");
                 }
             }
                         

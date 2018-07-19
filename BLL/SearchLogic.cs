@@ -54,6 +54,7 @@ namespace BLL
             }
 
             SearchedTerm = userSearchTerm; //for update the DB later
+            SearchPath = userSearchedPath; //for update the DB later
 
             rowsAffected = DBmanager.UpdateDbResults(this); //insert results to DB and updating back number of rows affected in DB
 
