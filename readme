@@ -1,0 +1,43 @@
+
+Ori's c# search project
+
+DB :
+    General:
+    
+        My DB contains 2 tables: Searches , Search_Results.
+        
+        Searches - contains 3 columns :
+        1) SearchID - with Identity True, is th PK
+        2) SearchTerm - will hold the search term that the user typed
+        3) SearchDate - to hold the search date of the specific search (the program will insert it to the DB)
+        
+        Search_Results - contains 3 columns :
+        1) ID - with Identity True, is th PK (not being used in the Project)
+        2) SearchID - will hold the searchID that was created in the searches table (the program will insert it to the DB)
+        3) SearchResultPath - will hold all the pathes that the search term was found in (the program will insert it to the DB)
+        
+        
+   Create the DB :
+   
+       Files for creating the DB located in the "DB Creation" folder
+       https://github.com/oriTid/CS_Search_project---FINAL/tree/master/DB%20Creation
+       
+       You have 2 options for creating the:
+       
+       1) Restore CS_Search_DB.bak
+       2) Run Script CS_Search_DB.sql on SQL Server
+       
+       
+  Updating the Data-Connection in the program:
+  
+        After DB is created, you will need to update the Data-Connection, in order for the program to work properly.
+        The connection is set in the CTOR of SearchLogic class located in the BLL.
+        
+        public SearchLogic() //ctor
+        {
+            DBmanager.myDataConnctionString = "Data Source=devps2010;Initial Catalog=CS_Search_Project_Ori;Integrated Security=True"; //set data connection string in DAL from the ctor
+        }
+        
+        Please dont forget to update it before running the program.
+       
+  
