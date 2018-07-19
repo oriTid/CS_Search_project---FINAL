@@ -13,7 +13,7 @@ namespace DAL
         public static int UpdateDbResults(FilesSearch filesearch)
         {
             int rowsAffected = 0; //affected rows
-            int searchID = 0;
+            int searchID = 0; 
             try
             {
                 using (SqlConnection mySqlConnection = new SqlConnection(myDataConnctionString))
@@ -21,11 +21,11 @@ namespace DAL
                     mySqlConnection.Open();
                     SqlCommand query = new SqlCommand($"INSERT INTO [dbo].[Searches] ([SearchTerm],[SearchDate],[SearchPath]) VALUES ('{filesearch.SearchedTerm}',getdate(), '{filesearch.SearchPath}') ", mySqlConnection);
                     rowsAffected = query.ExecuteNonQuery();
-                    query = new SqlCommand("select @@IDENTITY as ID", mySqlConnection);//get the last searchID from DB
+                    query = new SqlCommand("select @@IDENTITY as ID", mySqlConnection);//get the lateset searchID from the Searches table
                     searchID = int.Parse(query.ExecuteScalar().ToString());
 
 
-                    foreach (string path in filesearch.ResultsList) //inserting each search result (ID+Path) to the search_results DB
+                    foreach (string path in filesearch.ResultsList) //inserting each search result (searchID+Path) to the search_results DB
                     {
                         query = new SqlCommand($"INSERT INTO [dbo].[Search_Results] ([SearchID],[SearchResultPath]) VALUES ({searchID},N'{path.Replace("'","''")}')", mySqlConnection);
                         rowsAffected += query.ExecuteNonQuery();
