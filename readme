@@ -6,10 +6,11 @@ DB :
     
         My DB contains 2 tables: Searches , Search_Results.
         
-        Searches - contains 3 columns :
+        Searches - contains 4 columns :
         1) SearchID - with Identity True, is th PK
         2) SearchTerm - will hold the search term that the user typed
         3) SearchDate - to hold the search date of the specific search (the program will insert it to the DB)
+        4) SearchPath - holds the initial search Path user inserted (can be NULL)
         
         Search_Results - contains 3 columns :
         1) ID - with Identity True, is th PK (not being used in the Project)
