@@ -37,9 +37,9 @@ namespace BLL
 
             }
 
-            ResultFoundEvent?.Invoke($"Found {dirs.Count} directories to search in.");
+            ResultFoundEvent?.Invoke($"Found {dirs.Count} directories to search in."); //invoke resultfoundevent with a string
             ResultFoundEvent?.Invoke("");
-            ResultFoundEvent?.Invoke("Results:");
+            ResultFoundEvent?.Invoke("Results:"); //invoke resultfoundevent with a string
 
             foreach (string folder in dirs)
             {
@@ -60,13 +60,13 @@ namespace BLL
 
             if (rowsAffected <= 1) //if now rows affected, there were no results. raise event
             {
-                ResultFoundEvent?.Invoke("");
-                ResultFoundEvent?.Invoke("No results found");
+                ResultFoundEvent?.Invoke(""); //invoke resultfoundevent with a string
+                ResultFoundEvent?.Invoke("No results found"); //invoke resultfoundevent with a string
             }
             else
             {
                 ResultFoundEvent?.Invoke("");
-                ResultFoundEvent?.Invoke($"\n{dirs.Count} directories were scanned.\n{rowsAffected - 1} results were found for the searched term '{SearchedTerm}'.\nDB was updated susccesfully.\n"); //raise event to notify how many rows were affected (because 2 tables are always affected, I minus -1 to count)
+                ResultFoundEvent?.Invoke($"\n{dirs.Count} directories were scanned.\n{rowsAffected - 1} results were found for the searched term '{SearchedTerm}'.\nDB was updated susccesfully.\n"); ////invoke resultfoundevent with a string to notify how many rows were affected (because 2 tables are always affected, I minus -1 to count)
             }
         }
 
@@ -88,7 +88,7 @@ namespace BLL
         {
             try
             {
-                ShowProgress?.Invoke("");
+                ShowProgress?.Invoke(""); //invoke progress event
                 foreach (string folder in Directory.GetDirectories(subFolder, "*", SearchOption.TopDirectoryOnly).ToArray()) //loop on all top directoires
                 {
                     dirs.Add(folder); // add this folder to the dirs list

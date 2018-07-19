@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BOL
 {
     public class FilesSearch
-    { // This class will represente the search properties
+    { // This class will represent the search properties
 
         public int SearchID { get; set; }
         public string SearchedTerm { get; set; }

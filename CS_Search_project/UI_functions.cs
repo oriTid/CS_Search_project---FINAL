@@ -99,11 +99,11 @@ namespace UIL
             return userSearchTerm;
         }
         private static bool ValidateInputChar(string userInput) => userInput.Trim() != ""; //user input validation func
-        private static void NewSearch_ResultFoundEvent(string eventAnswer) //Write event answers
+        private static void NewSearch_ResultFoundEvent(string eventAnswer) 
         {
-            Console.WriteLine(eventAnswer);
+            Console.WriteLine(eventAnswer); //print event answers (strings) in console
         }
-        private static void NewSearch_ShowProgress(string eventAnswer) //write symbol to screen while searching directories
+        private static void NewSearch_ShowProgress(string eventAnswer) //print symbol to screen (progress) while searching directories
         {             
             switch (ProgressCnt)
             {

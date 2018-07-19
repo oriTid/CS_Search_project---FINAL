@@ -22,7 +22,7 @@ namespace DAL
                     SqlCommand query = new SqlCommand($"INSERT INTO [dbo].[Searches] ([SearchTerm],[SearchDate],[SearchPath]) VALUES ('{filesearch.SearchedTerm}',getdate(), '{filesearch.SearchPath}') ", mySqlConnection);
                     rowsAffected = query.ExecuteNonQuery();
                     query = new SqlCommand("select @@IDENTITY as ID", mySqlConnection);//get the lateset searchID from the Searches table
-                    searchID = int.Parse(query.ExecuteScalar().ToString());
+                    searchID = int.Parse(query.ExecuteScalar().ToString()); 
 
 
                     foreach (string path in filesearch.ResultsList) //inserting each search result (searchID+Path) to the search_results DB
@@ -53,7 +53,7 @@ namespace DAL
                 SqlCommand query = new SqlCommand("SELECT s.SearchID, s.SearchTerm, s.SearchDate, sr.SearchResultPath, s.SearchPath FROM DBO.Searches AS s LEFT JOIN DBO.Search_Results AS sr ON s.SearchID = sr.SearchID", mySqlConnection);
                 reader = query.ExecuteReader();
 
-                while (reader.Read()) //generate the joined data sting from the query
+                while (reader.Read()) //generate the joined data string from the query
                 {
                     dbData.Add($"ID:{reader[0]} Search Term: {reader[1]} Initial Search Path: {reader[4]} Search Date: {DateTime.Parse(reader[2].ToString()).ToString("dd/MM/yyyy HH:mm:ss") } Result Path: {reader[3]}");
                 }
