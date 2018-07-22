@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D852838A-2E26-4106-8FEC-82322F026A33}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>DAL</RootNamespace>
-    <AssemblyName>DAL</AssemblyName>
+    <ProjectGuid>{C81841FF-0FAD-47D4-9D94-EE2ABDB4A503}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CS_Search_project</RootNamespace>
+    <AssemblyName>CS_Search_project</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,13 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBmanager.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI_functions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BOL\BOL.csproj">
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\03_BLL.csproj">
+      <Project>{2f38038f-424b-4fad-894f-b8677218640c}</Project>
+      <Name>03_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOL\02_BOL.csproj">
       <Project>{e84320ba-0c56-47fe-80b0-f44c9103506c}</Project>
-      <Name>BOL</Name>
+      <Name>02_BOL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

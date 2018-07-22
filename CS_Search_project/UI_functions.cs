@@ -7,7 +7,7 @@ namespace UIL
     public static class UI_functions
     {
         private static int ProgressCnt = 0; // is used in the progress event (for the switch case)
-        #region Startup Func
+        #region Startup Functions
         public static int Startup()
         {
             ConsoleKeyInfo? userInput = null; // value that gets the key input
@@ -86,6 +86,7 @@ namespace UIL
             return 0;
         }
         #endregion
+        #region Validation Functions
         private static string GetUserTerm() //validate the user search term
         {
             string userSearchTerm = "";
@@ -98,13 +99,14 @@ namespace UIL
             }
             return userSearchTerm;
         }
-        private static bool ValidateInputChar(string userInput) => userInput.Trim() != ""; //user input validation func
-        private static void NewSearch_ResultFoundEvent(string eventAnswer) 
+        private static bool ValidateInputChar(string userInput) => userInput.Trim() != ""; //user input validation func 
+        #endregion
+        private static void NewSearch_ResultFoundEvent(string eventAnswer)
         {
             Console.WriteLine(eventAnswer); //print event answers (strings) in console
         }
         private static void NewSearch_ShowProgress(string eventAnswer) //print symbol to screen (progress) while searching directories
-        {             
+        {
             switch (ProgressCnt)
             {
                 case 0: Console.Write("\b|"); break;

@@ -49,13 +49,13 @@
     <Compile Include="SearchLogic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BOL\BOL.csproj">
+    <ProjectReference Include="..\BOL\02_BOL.csproj">
       <Project>{e84320ba-0c56-47fe-80b0-f44c9103506c}</Project>
-      <Name>BOL</Name>
+      <Name>02_BOL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
+    <ProjectReference Include="..\DAL\01_DAL.csproj">
       <Project>{d852838a-2e26-4106-8fec-82322f026a33}</Project>
-      <Name>DAL</Name>
+      <Name>01_DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
