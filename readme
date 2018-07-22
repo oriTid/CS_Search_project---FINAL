@@ -26,7 +26,7 @@ DB :
        You have 2 options for creating the:
        
        1) Restore CS_Search_DB.bak
-       2) Run Script CS_Search_DB.sql on SQL Server
+       2) execute Script CS_Search_DB.sql on SQL Server
        
        
   Updating the Data-Connection in the program:
