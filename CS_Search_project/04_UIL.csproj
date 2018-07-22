@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C81841FF-0FAD-47D4-9D94-EE2ABDB4A503}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CS_Search_project</RootNamespace>
-    <AssemblyName>CS_Search_project</AssemblyName>
+    <RootNamespace>_04_UIL</RootNamespace>
+    <AssemblyName>04_UIL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

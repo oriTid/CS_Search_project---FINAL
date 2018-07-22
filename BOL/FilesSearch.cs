@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BOL
+namespace _02_BOL
 {
     public class FilesSearch
     { // This class will represent the search properties

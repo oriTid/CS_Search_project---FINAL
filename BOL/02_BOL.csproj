@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E84320BA-0C56-47FE-80B0-F44C9103506C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BOL</RootNamespace>
-    <AssemblyName>BOL</AssemblyName>
+    <RootNamespace>_02_BOL</RootNamespace>
+    <AssemblyName>02_BOL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -1,11 +1,11 @@
-﻿using BOL;
+﻿using _02_BOL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using DAL;
+using _01_DAL;
 
-namespace BLL
+namespace _03_BLL
 {
     public class SearchLogic : FilesSearch
     {

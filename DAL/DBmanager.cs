@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using BOL;
+using _02_BOL;
 
-namespace DAL
+namespace _01_DAL
 {
     public static class DBmanager
     {
